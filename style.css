@@ -29,6 +29,7 @@ header {
 header, section {
     margin: 3%;
 }
+
 /* CARD */
 
 .card {
@@ -129,16 +130,16 @@ ul {
     justify-content: center;
     display: flex;
   }
-
-  ul {
-    border-left: solid 1px var(--FONT-COLOR);
-  }
   
   li {
-    background-color: #333;
+    background-color: #303030;
     float: left;
-    border-right: solid 1px var(--FONT-COLOR);
+    border-left: solid 1px var(--FONT-COLOR);
     border-bottom: solid 1px var(--FONT-COLOR);
+  }
+
+  ul li:last-child {
+    border-right: solid 1px var(--FONT-COLOR);
   }
   
   li a {

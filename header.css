@@ -1,0 +1,103 @@
+body {
+    /* --BACKGROUND: #161925; */
+    --BACKGROUND: #0E1116;
+    /* --BACKGROUND: #171D1C; */
+    /* --BACKGROUND: #02111B; */
+    --FONT-COLOR: white;
+    /* --BACKGROUND-COLORED: #2D3047; */
+    --BACKGROUND-COLORED: #392B58;
+    /* --CTA: #EA526F; */
+    --CTA: #645E9D;
+    --CTA-LIGHT: #E76B74;
+    --LINK: #9ca9ff;
+    --LINK-HOVER: #8d9aff;
+    --LINK-UNDERLINE: #a4aaff;
+    --GREY-LIGHT: #c4cfdb;
+    --GREY: #aaaaaa;
+}
+body.light {
+    /* --BACKGROUND: #161925; */
+    --BACKGROUND: #F7D6E0;
+    /* --BACKGROUND: #171D1C; */
+    /* --BACKGROUND: #02111B; */
+    --FONT-COLOR: #376973;
+    /* --BACKGROUND-COLORED: #2D3047; */
+    --BACKGROUND-COLORED: #F2B5D4;
+    /* --CTA: #EA526F; */
+    --CTA: #645E9D;
+    --CTA-LIGHT: #E76B74;
+    --LINK: #9ca9ff;
+    --LINK-HOVER: #8d9aff;
+    --LINK-UNDERLINE: #a4aaff;
+    --GREY-LIGHT: #c4cfdb;
+    --GREY: #aaaaaa;
+}
+
+body {
+    background-color: var(--BACKGROUND);
+    color: var(--FONT-COLOR);
+    font-family: 'Parkinsans', 'Times New Roman';
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    height: 100vh;
+    transition: grid-template-columns 0.5s ease;
+}
+header .headerLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+header .headerLeft h1 {
+    font-size: 2.5rem;
+}
+header .headerRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--BACKGROUND-COLORED);
+}
+header .headerRight svg {
+    rotate: -90deg;
+    position: absolute;
+    left: 65%;
+    width: 13rem;
+    aspect-ratio: 1/1;
+    g {
+        fill: var(--BACKGROUND-COLORED);
+    }
+    width: 200px; /* Set a specific width */
+    height: 200px; /* Set a specific height */
+    transition: all 0.5s ease;
+}
+header .headerRight svg:first-child {
+    top: 6%;
+}
+header .headerRight svg:nth-child(2) {
+    bottom: 6%;
+}
+header .headerRight svg:nth-child(3) {
+    rotate: 90deg;
+    left: 70%;
+    g{
+        fill: var(--BACKGROUND);
+    }
+}
+
+header.expanded {
+    grid-template-columns: 1fr 2.5fr;
+}
+header.expanded .headerRight svg {
+    left: 23%;
+}
+header.expanded .headerRight svg:nth-child(3) {
+    left: 27%;
+}
+.headerRight span {
+    font-size: 4rem;
+}
