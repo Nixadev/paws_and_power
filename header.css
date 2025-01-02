@@ -100,4 +100,5 @@ header.expanded .headerRight svg:nth-child(3) {
 }
 .headerRight span {
     font-size: 4rem;
+    user-select: none;
 }
