@@ -135,6 +135,7 @@ body .headerRight span::after{
 body.light .headerRight span::after{
     background-image: url('sun.svg');
 }
+
 header .headerLeft .expanded{
     display: none;
 }
