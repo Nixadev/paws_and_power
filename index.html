@@ -20,12 +20,29 @@
     <div class="page">
         <header>
             <div class="headerLeft">
-                <h1>
+                <h1 class="notexpanded">
                     Paws & Power
                 </h1>
+                
+                <div class="expanded">
+                    <h1>
+                        Paws
+                    </h1>
+                    
+                    <h1>
+                        &
+                    </h1>
+                    
+                    <h1>
+                        Power
+                    </h1>
+                </div>
+                
+                
             </div>
             <div class="headerRight">
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                <div class="svgs">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                     width="1280.000000pt" height="1280.000000pt" viewBox="0 0 1280.000000 1280.000000"
                     preserveAspectRatio="xMidYMid meet">
                     <metadata>
@@ -57,8 +74,8 @@
     245 -23 355 -118 667 -469 1473 -976 2240 -603 912 -1311 1569 -1902 1764
     -215 71 -398 87 -598 52z"/>
     </g>
-                </svg>
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    </svg>
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                     width="1280.000000pt" height="1280.000000pt" viewBox="0 0 1280.000000 1280.000000"
                     preserveAspectRatio="xMidYMid meet">
                     <metadata>
@@ -90,8 +107,8 @@
     245 -23 355 -118 667 -469 1473 -976 2240 -603 912 -1311 1569 -1902 1764
     -215 71 -398 87 -598 52z"/>
     </g>
-                </svg>
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    </svg>
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                 width="1280.000000pt" height="1280.000000pt" viewBox="0 0 1280.000000 1280.000000"
                 preserveAspectRatio="xMidYMid meet">
                 <metadata>
@@ -123,12 +140,17 @@
         245 -23 355 -118 667 -469 1473 -976 2240 -603 912 -1311 1569 -1902 1764
         -215 71 -398 87 -598 52z"/>
         </g>
-                </svg>
-                <span class="cat">ᓚᘏᗢ</span>
+                    </svg>
+                </div>
+                <div class="theme">
+                    <span class="cat">ᓚᘏᗢ</span> 
+                    <p>Change your theme</p>
+                </div>
             </div>
         </header>
     </div>
     <script>
+        var audio = new Audio('osu-hit-sound.mp3');
         document.querySelector('.headerRight').addEventListener('mouseover', function() {
             document.querySelector('header').classList.add('expanded');
         });
@@ -137,6 +159,8 @@
         });
         document.querySelector('.cat').addEventListener('click', function() {
             document.querySelector('body').classList.toggle('light');
+            audio.currentTime = 0;
+            audio.play();
         });
     </script>
 </body>
