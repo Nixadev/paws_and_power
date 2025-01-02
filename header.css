@@ -102,3 +102,18 @@ header.expanded .headerRight svg:nth-child(3) {
     font-size: 4rem;
     user-select: none;
 }
+body .headerRight span::after{
+    content: '';
+    background-image: url('moon.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: relative;
+    top: -100px;
+    left: 150px;
+}
+body.light .headerRight span::after{
+    background-image: url('sun.svg');
+}
