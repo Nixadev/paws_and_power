@@ -6,7 +6,7 @@
     <title>Header</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="header2.css">
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,19 +25,10 @@
                 </h1>
                 
                 <div class="expanded">
-                    <h1>
-                        Paws
-                    </h1>
-                    
-                    <h1>
-                        &
-                    </h1>
-                    
-                    <h1>
-                        Power
-                    </h1>
+                    <h1>Paws</h1><h1>&</h1><h1>Power</h1>
                 </div>
                 
+                <div class="burger"></div>
                 
             </div>
             <div class="headerRight">
@@ -143,8 +134,10 @@
                     </svg>
                 </div>
                 <div class="theme">
+                    
                     <span class="cat">ᓚᘏᗢ</span> 
-                    <p>Change your theme</p>
+                
+                    <p class="themep">Change your theme</p>
                 </div>
             </div>
         </header>
@@ -157,7 +150,7 @@
         document.querySelector('.headerRight').addEventListener('mouseout', function() {
             document.querySelector('header').classList.remove('expanded');
         });
-        document.querySelector('.cat').addEventListener('click', function() {
+        document.querySelector('.theme').addEventListener('click', function() {
             document.querySelector('body').classList.toggle('light');
             audio.currentTime = 0;
             audio.play();

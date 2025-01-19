@@ -1,12 +1,9 @@
-body {
-    /* --BACKGROUND: #161925; */
+/* Setting up colors */
+
+body { /* This is the dark theme */
     --BACKGROUND: #0E1116;
-    /* --BACKGROUND: #171D1C; */
-    /* --BACKGROUND: #02111B; */
     --FONT-COLOR: white;
-    /* --BACKGROUND-COLORED: #2D3047; */
     --BACKGROUND-COLORED: #392B58;
-    /* --CTA: #EA526F; */
     --CTA: #645E9D;
     --CTA-LIGHT: #E76B74;
     --LINK: #9ca9ff;
@@ -15,15 +12,11 @@ body {
     --GREY-LIGHT: #c4cfdb;
     --GREY: #aaaaaa;
 }
-body.light {
-    /* --BACKGROUND: #161925; */
+
+body.light { /* This is the light theme */  
     --BACKGROUND: #F7D6E0;
-    /* --BACKGROUND: #171D1C; */
-    /* --BACKGROUND: #02111B; */
     --FONT-COLOR: #376973;
-    /* --BACKGROUND-COLORED: #2D3047; */
     --BACKGROUND-COLORED: #F2B5D4;
-    /* --CTA: #EA526F; */
     --CTA: #645E9D;
     --CTA-LIGHT: #E76B74;
     --LINK: #9ca9ff;
@@ -33,20 +26,26 @@ body.light {
     --GREY: #aaaaaa;
 }
 
-body {
+body { 
     background-color: var(--BACKGROUND);
     color: var(--FONT-COLOR);
-    font-family: 'Parkinsans', 'Times New Roman';
+    font-family: 'Parkinsans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
+
+/* Header */
+
 header {
     display: grid;
     grid-template-columns: 3fr 1fr;
     height: 100vh;
     transition: grid-template-columns 0.5s ease;
 }
+
+/* Left side */
+
 header .headerLeft {
     display: flex;
     flex-direction: column;
@@ -54,10 +53,15 @@ header .headerLeft {
     align-items: center;
     padding: 0 2rem;
 }
+
 header .headerLeft h1 {
     font-size: 2.5rem;
     text-align: center;
+    user-select: none;
 }
+
+/* Right side */
+
 header .headerRight {
     display: flex; 
     flex-direction: column;
@@ -68,41 +72,19 @@ header .headerRight {
     background-color: var(--BACKGROUND-COLORED);
     flex: 1;
 }
+
 header .headerRight p {
     font-size: 1rem;
     text-align: center;
     margin: 0;
 }
-header .headerRight .svgs {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    height: 100%;
-    position: absolute;
-    transform: translateX(-16vw);
-}
-header .headerRight svg {
-    rotate: -90deg;
-    
-    aspect-ratio: 1/1;
-    g {
-        fill: var(--BACKGROUND-COLORED);
-    }
-    width: 10vw;
-    height: auto;
-    transition: all 0.5s ease;
-}
 
-header .headerRight svg:nth-child(2) {
-    rotate: 90deg;
-    transform: translateY(-6vw);
-    g{
-        fill: var(--BACKGROUND);
-        
-    }
+header .headerRight .theme {
+    cursor: pointer;
+    /* border: 0.5px solid var(--GREY-LIGHT); */
+    /* padding: 4.5rem 2rem 2rem 2rem; */
+    /* border-radius: 0.5rem; */
 }
-
 
 .headerRight span {
     font-size: 4rem;
@@ -123,9 +105,46 @@ header .headerRight svg:nth-child(2) {
     top: -5rem;
     right: -9rem;
 }
+
+/* Paws */
+
+header .headerRight .svgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100%;
+    position: absolute;
+    transform: translateX(-16vw);
+}
+
+header .headerRight svg {
+    rotate: -90deg;
+    aspect-ratio: 1/1;
+    width: 10vw;
+    height: auto;
+    transition: all 0.5s ease;
+    g {
+        fill: var(--BACKGROUND-COLORED);
+    }
+}
+
+header .headerRight svg:nth-child(2) {
+    rotate: 90deg;
+    transform: translateY(-6vw);
+    g{
+        fill: var(--BACKGROUND);
+        
+    }
+}
+
+/* Light mode */
+
 body.light .headerRight span::after{
     background-image: url('sun.svg');
 }
+
+/* Expanded header */
 
 header .headerLeft .expanded{
     display: none;
@@ -155,3 +174,21 @@ header .headerRight .theme {
     transition: transform 0.5s ease;
 }
 
+header.expanded {
+    grid-template-columns: 1fr 2.5fr;
+}
+header.expanded .headerRight svg {
+    transform: translateY(-22vw);
+}
+header.expanded .headerRight svg:nth-child(2) {
+    transform: translateY(16vw);
+    rotate: 90deg;
+}
+
+/* Burger */
+
+.burger {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
